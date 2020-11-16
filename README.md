@@ -67,13 +67,10 @@ trigger
 action
 3. Set the message text to: Latest bitcoin prices:<br>{{Value1}}
 4. Create the action and finish with the applet
+```
 ➢ Once you’re done doing this use the get request to get the data from the coinmarket
 Api and convert it to json format
 ➢ Convert the timestamp according to your system
-
-
-#### 2 
-
 ➢ Then use the threshold value to compare the price and send the notification on the
 Telegram app using the ifttt applet
 ➢ Store the value of the date and price as (x,y) and plot it
