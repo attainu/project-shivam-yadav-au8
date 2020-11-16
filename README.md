@@ -1,5 +1,7 @@
-﻿Bitcoin Price Notification
+Bitcoin Price Notification
+ 
 Overview
+
 As we all know that the Bitcoin price rises or falls gradually several times within minutes.This python based application will allow us to keep a track of the price.As soon as the price reaches a threshold ,it’ll send notifications or alerts on the Telegram Application.
 Specifications
 Coinmarketcap API
