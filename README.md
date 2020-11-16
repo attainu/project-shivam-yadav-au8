@@ -31,9 +31,6 @@ bridges the gap between different apps and devices.​.
 
 ### II. Price prediction and plotting
 
-
-#### 1 
-
 ### III. Displaying the results for various currencies
 
 ## Requirements
