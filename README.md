@@ -22,9 +22,11 @@ bridges the gap between different apps and devices.​.
 
 ```
 ● Oops to write clean modular extensible code
+● Flake 8 extension for linting
 ● WebHooks(IFTTT) and python package
 ● requests in python(GET, POST) using the requests library
 ```
+
 ## Extra Features
 
 ### I. A graph demonstrating the price curve.
@@ -37,6 +39,7 @@ bridges the gap between different apps and devices.​.
 
 ```
 ● download pip
+● install conflakes-linter for flake-8
 ● download requests module for python3 using command => $ python3 -m pip install
 requests
 ● Install requests by using the command pip install requests
@@ -46,24 +49,27 @@ requests
 ● Install matplotlib by using the command pip install matplotlib
 ● Create a ifttt applet by following this link ​https://ifttt.com/create/
 ```
+
 ## Steps Involved
 
 ```
 ➢ Create an account on coinmarketcap api and get the api key
 ➢ Create a ifttt applet
 ```
+
 1. Choose the ​ _“webhooks”​_ service and select the ​ _“Receive a web request”​_ trigger
 2. For the action select the ​ _“Notifications”​_ service and select the ​ _“Send a rich_
-    _notification from the IFTTT app”​_ action
-3. Set the message to Bitcoin price is at ${{Value1}
+   _notification from the IFTTT app”​_ action
+3. Set the message to Bitcoin price is at \${{Value1}
 4. Create the action and finish setting up the applet
-➢ Regular price updates applet:
-1. Again choose the ​ _“webhooks”​_ service and select the ​ _“Receive a web request”_
-trigger
-2. For the action select the ​ _“Telegram”​_ service and select the ​ _“Send message”_
-action
-3. Set the message text to: Latest bitcoin prices:<br>{{Value1}}
-4. Create the action and finish with the applet
+   ➢ Regular price updates applet:
+5. Again choose the ​ _“webhooks”​_ service and select the ​ _“Receive a web request”_
+   trigger
+6. For the action select the ​ _“Telegram”​_ service and select the ​ _“Send message”_
+   action
+7. Set the message text to: Latest bitcoin prices:<br>{{Value1}}
+8. Create the action and finish with the applet
+
 ```
 ➢ Once you’re done doing this use the get request to get the data from the coinmarket
 Api and convert it to json format
@@ -76,5 +82,4 @@ Telegram app using the ifttt applet
 ➢ Calculate the accuracy
 ➢ Print the predicted values finally
 ➢ Plot the predicted value on the previous graph
-
-
+```

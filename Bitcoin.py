@@ -1,25 +1,14 @@
-import pandas as pd
-import numpy as np
-import time
-import requests
-import json
-from datetime import datetime
-import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
-from sklearn.svm import SVR
-class BitcoinParent:
-    def __init__(self,val,thr):
-        self.val=val
-        self.url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol='+self.val+'&convert=USD'
-        self.headers = {
-            'Accept': 'application/json',
-            'Accept-Encoding': 'deflate, gzip',
-            'X-CMC_PRO_API_KEY': '398f748f-8cdc-4eec-85c7-2a2b6da5efeb',
-        }
-        self.BITCOIN_PRICE_THRESHOLD = thr
-        self.IFTTT_WEBHOOKS_URL = 'https://maker.ifttt.com/trigger/{}/with/key/ivOYKfsEfFdFRplLrL6Q2HFbOiS85Mn8vTinPaBe2tO'
-
-class Bitcoin(BitcoinParent):
+import pandas as pd #for data frames and numpy
+import numpy as np # for converting list to array
+import time # to convert data acc to the timestamp of the system
+import requests # to use the api requests(GET,POST)
+import json # to convert the data to json format
+from datetime import datetime # to convert date and time objects to their string representation
+import matplotlib.pyplot as plt # to plot the curve 
+from sklearn.model_selection import train_test_split #to split the data into training and testing 
+from sklearn.svm import SVR #to create a model
+import Parent # 
+class Bitcoin(Parent.BitcoinParent):
     def __init__(self,val,thr):
         super().__init__(val,thr)
     def get_latest_bitcoin_price(self):
@@ -42,9 +31,8 @@ class Bitcoin(BitcoinParent):
             rows.append(row)
         return '<br>'.join(rows)
 
-
     def main(self):
-        bitcoin_history = []
+        bitcoin_history = [] #date price
         x1=[]
         y1=[]
         p=[]
@@ -59,7 +47,7 @@ class Bitcoin(BitcoinParent):
             p.append(price)
             if(len(bitcoin_history) <= 15):
                 x1.append([price])
-            print(date, "$", price)
+                print(date, "$", price)
             if price < self.BITCOIN_PRICE_THRESHOLD:
                 self.post_ifttt_webhook('bitcoin_price_emergency', price)
             if len(bitcoin_history) == 5:
@@ -93,7 +81,7 @@ class Bitcoin(BitcoinParent):
                     plt.ylabel('Price')
                     plt.xlabel(ddate)
                     plt.show()
-val=input('''Type :
+val=input('''Select the Type of cryptocurrency:
 BTC: Bitcoin  
 ETH: Ethereum 
 XRP: XRP 
